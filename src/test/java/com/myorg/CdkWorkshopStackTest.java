@@ -21,7 +21,18 @@ public class CdkWorkshopStackTest {
         JsonNode actual = JSON.valueToTree(app.synth().getStackArtifact(stack.getArtifactId()).getTemplate());
 
         assertThat(actual.toString())
-            .contains("AWS::SQS::Queue")
-            .contains("AWS::SNS::Topic");
+            .contains("AWS::DynamoDB::Table")
+            .contains("AWS::ApiGateway::Resource")
+            .contains("AWS::ApiGateway::Method")
+            .contains("AWS::ApiGateway::RestApi")
+            .contains("AWS::ApiGateway::Account")
+            .contains("AWS::ApiGateway::Stage")
+            .contains("AWS::ApiGateway::Deployment")
+            .contains("AWS::IAM::Role")
+            .contains("AWS::IAM::Policy")
+            .contains("AWS::Lambda::Permission")
+            .contains("AWS::Lambda::Function");
+            //.contains("AWS::SQS::Queue")
+            //.contains("AWS::SNS::Topic");
     }
 }

@@ -14,6 +14,11 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
@@ -40,6 +45,21 @@
         </dependency>
 
         <!-- Respective AWS Construct Libraries -->
+        <dependency>
+            <groupId>software.amazon.awscdk</groupId>
+            <artifactId>dynamodb</artifactId>
+            <version>${cdk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>software.amazon.awscdk</groupId>
+            <artifactId>apigateway</artifactId>
+            <version>${cdk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>software.amazon.awscdk</groupId>
+            <artifactId>lambda</artifactId>
+            <version>${cdk.version}</version>
+        </dependency>
         <dependency>
             <groupId>software.amazon.awscdk</groupId>
             <artifactId>sns</artifactId>
@@ -73,6 +93,14 @@
             <artifactId>assertj-core</artifactId>
             <version>3.18.1</version>
             <scope>test</scope>
+        </dependency>
+
+        <!-- Additional Construct Libraries -->
+        <dependency>
+            <groupId>com.github.eladb</groupId>
+            <artifactId>cdk-dynamo-table-viewer</artifactId>
+            <!-- <version>[3.0.6,4)</version> -->
+            <version>[3.0.7]</version>
         </dependency>
     </dependencies>
 </project>
